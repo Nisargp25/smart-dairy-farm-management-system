@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables (CRITICAL)
+.env
+client/.env
+server/.env
+
+# Build artifacts
+dist/
+client/dist/
+
+# Local logs
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Server specific
+server/uploads/*
+!server/uploads/.gitkeep

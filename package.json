@@ -1,0 +1,17 @@
+{
+  "name": "smart-dairy-farm-management",
+  "version": "1.0.0",
+  "description": "Smart Dairy Farm Management System - MERN Stack",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.17"
+  }
+}
