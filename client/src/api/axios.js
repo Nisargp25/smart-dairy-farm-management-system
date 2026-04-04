@@ -1,7 +1,14 @@
 import axios from 'axios';
 
+const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
+if (import.meta.env.PROD && !import.meta.env.VITE_API_URL) {
+  // In production, VITE_API_URL should point to deployed backend (/api on localhost is not valid here).
+  console.error('Missing VITE_API_URL in production. Auth requests may fail.');
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: apiBaseUrl,
 });
 
 api.interceptors.request.use(

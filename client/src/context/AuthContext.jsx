@@ -37,8 +37,9 @@ export const AuthProvider = ({ children }) => {
       toast.success('Login successful');
       return { success: true, user: res.data.user };
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Login failed');
-      return { success: false, message: err.response?.data?.message };
+      const message = err.response?.data?.message || 'Cannot reach server. Check API URL and backend deployment.';
+      toast.error(message);
+      return { success: false, message };
     }
   };
 
@@ -51,8 +52,9 @@ export const AuthProvider = ({ children }) => {
       toast.success('Registration successful');
       return { success: true, user: res.data.user };
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Registration failed');
-      return { success: false, message: err.response?.data?.message };
+      const message = err.response?.data?.message || 'Cannot reach server. Check API URL and backend deployment.';
+      toast.error(message);
+      return { success: false, message };
     }
   };
 

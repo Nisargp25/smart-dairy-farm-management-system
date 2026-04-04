@@ -28,7 +28,8 @@ app.use(cors({
     }
 
     const isLocalDevOrigin = /^https?:\/\/(localhost|127\.0\.0\.1):(5\d{3})$/.test(origin);
-    if (isLocalDevOrigin || envOrigins.includes(origin)) {
+    const isVercelOrigin = /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
+    if (isLocalDevOrigin || isVercelOrigin || envOrigins.includes(origin)) {
       return callback(null, true);
     }
 
